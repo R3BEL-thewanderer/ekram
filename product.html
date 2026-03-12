@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product | EKRAM ORIGINAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <button class="menu-btn" onclick="openSidebar()"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="EKRAM ORIGINAL"><span class="logo-text">EKRAM ORIGINAL</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="collections.html">Collections <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+                    <div class="dropdown-menu">
+                        <a href="collections.html#kurti">Kurti & Tops</a>
+                        <a href="collections.html#coord">Co-Ord Sets</a>
+                        <a href="collections.html#boho">Boho Pants</a>
+                    </div>
+                </div>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <div style="display:flex;align-items:center;">
+                    <div id="searchWrapper" style="overflow:hidden;width:0;opacity:0;transition:all 0.3s;margin-right:8px;">
+                        <input id="searchInput" type="text" placeholder="Search products..." style="padding:8px 14px;border:1px solid #d1d5db;border-radius:999px;font-size:0.875rem;outline:none;width:240px;">
+                    </div>
+                    <button onclick="toggleSearch()">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </button>
+                </div>
+                <a href="account.html">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                </a>
+                <a href="cart.html" style="position:relative;">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header"><span>MENU</span><button onclick="closeSidebar()"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+        <a href="index.html">Home</a><a href="collections.html">Collections</a><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="cart.html">Cart</a>
+    </div>
+
+    <!-- Product Detail -->
+    <main class="section" style="padding-top:100px;">
+        <div class="container">
+            <div class="product-detail">
+                <!-- Gallery -->
+                <div class="gallery">
+                    <div class="main-image">
+                        <img id="mainImage" src="img/INDRANI (MULTICOLOUR)1.webp" alt="Product">
+                    </div>
+                    <div class="thumbnails" id="thumbnails"></div>
+                </div>
+                <!-- Info -->
+                <div class="product-info">
+                    <h1 id="productTitle">Indrani Kurti</h1>
+                    <p class="price" id="productPrice">₹1,299</p>
+                    <p class="tax">Tax included.</p>
+
+                    <div style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:24px 0;margin-top:24px;">
+                        <!-- Sizes -->
+                        <div class="option-group">
+                            <h3>Size</h3>
+                            <div class="size-grid">
+                                <button class="size-btn active" onclick="selectSize(this)">S</button>
+                                <button class="size-btn" onclick="selectSize(this)">M</button>
+                                <button class="size-btn" onclick="selectSize(this)">L</button>
+                                <button class="size-btn" onclick="selectSize(this)">XL</button>
+                            </div>
+                        </div>
+                        <!-- Quantity -->
+                        <div class="option-group" style="margin-top:24px;">
+                            <h3>Quantity</h3>
+                            <div class="qty-control">
+                                <button onclick="updateQty(-1)">−</button>
+                                <span id="qtyDisplay">1</span>
+                                <button onclick="updateQty(1)">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions -->
+                    <div style="display:flex;flex-direction:column;gap:12px;margin-top:24px;">
+                        <button class="btn-add-cart" id="addToCartBtn">ADD TO CART</button>
+                        <a href="cart.html" class="btn-buy-now">BUY IT NOW</a>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="option-group" style="margin-top:32px;">
+                        <h3>Description</h3>
+                        <p id="productDesc" style="color:var(--text-light);line-height:1.7;margin-top:8px;">A beautiful traditional Kurti with modern prints.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h3>EKRAM ORIGINAL</h3><p>Heritage meets modern fashion. A legacy woven by three generations of women.</p></div>
+                <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="collections.html">Shop All</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+                <div><h4>Policies</h4><ul><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Exchange</a></li><li><a href="#">Terms & Conditions</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+                <div class="newsletter"><h4>Newsletter</h4><p style="margin-bottom:16px;">Subscribe for updates and exclusive deals.</p><input type="email" placeholder="Enter your email"><button>Subscribe</button></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 EKRAM ORIGINAL. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script src="products.js"></script>
+    <script>
+        // Dynamic product page
+        function changeMainImage(thumb, src) {
+            document.getElementById('mainImage').src = src;
+            document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+        }
+        function selectSize(btn) {
+            document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+        function updateQty(delta) {
+            const el = document.getElementById('qtyDisplay');
+            let val = parseInt(el.textContent) + delta;
+            if (val >= 1) el.textContent = val;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const id = new URLSearchParams(window.location.search).get('id') || 'indrani';
+            const product = window.productsData[id] || window.productsData['indrani'];
+
+            document.getElementById('productTitle').textContent = product.name;
+            document.getElementById('productPrice').textContent = '₹' + product.price.toLocaleString('en-IN');
+            document.getElementById('productDesc').textContent = product.description;
+            document.getElementById('mainImage').src = product.images[0];
+            document.getElementById('mainImage').alt = product.name;
+            document.title = product.name + ' | EKRAM ORIGINAL';
+
+            // Thumbnails
+            const thumbs = document.getElementById('thumbnails');
+            thumbs.innerHTML = '';
+            product.images.forEach((src, i) => {
+                const btn = document.createElement('button');
+                btn.className = 'thumb' + (i === 0 ? ' active' : '');
+                btn.onclick = function() { changeMainImage(this, src); };
+                btn.innerHTML = '<img src="' + src + '" alt="Thumb ' + (i+1) + '">';
+                thumbs.appendChild(btn);
+            });
+
+            // Add to cart
+            document.getElementById('addToCartBtn').onclick = (e) => {
+                addToCart(e, product.id, product.name, product.price, product.images[0], product.category);
+            };
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | EKRAM ORIGINAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <button class="menu-btn" onclick="openSidebar()"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="EKRAM ORIGINAL"><span class="logo-text">EKRAM ORIGINAL</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="collections.html">Collections <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+                    <div class="dropdown-menu">
+                        <a href="collections.html#kurti">Kurti & Tops</a>
+                        <a href="collections.html#coord">Co-Ord Sets</a>
+                        <a href="collections.html#boho">Boho Pants</a>
+                    </div>
+                </div>
+                <a href="about.html" class="active">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <div style="display:flex;align-items:center;">
+                    <div id="searchWrapper" style="overflow:hidden;width:0;opacity:0;transition:all 0.3s;margin-right:8px;">
+                        <input id="searchInput" type="text" placeholder="Search products..." style="padding:8px 14px;border:1px solid #d1d5db;border-radius:999px;font-size:0.875rem;outline:none;width:240px;">
+                    </div>
+                    <button onclick="toggleSearch()">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </button>
+                </div>
+                <a href="account.html">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                </a>
+                <a href="cart.html" style="position:relative;">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header"><span>MENU</span><button onclick="closeSidebar()"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+        <a href="index.html">Home</a><a href="collections.html">Collections</a><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="cart.html">Cart</a>
+    </div>
+
+    <!-- Page Header -->
+    <div class="page-header" style="padding-top:100px;">
+        <span class="section-label">Our Journey</span>
+        <h1>About EKRAM ORIGINAL</h1>
+    </div>
+
+    <!-- About Content -->
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            <div class="about-content">
+                <h2 style="font-family:var(--font-serif);font-size:1.75rem;font-weight:700;color:var(--text);margin-bottom:24px;">Who We Are</h2>
+                <p>EKRAM ORIGINAL is more than just a clothing brand; it's a heartfelt legacy woven by three generations of women—a grandmother, mother, and granddaughter—each bringing their unique flair to the tapestry of fashion.</p>
+                <p>Rooted in tradition yet embracing modernity, our brand celebrates the timeless bond of family and the artistry passed down through generations.</p>
+
+                <h2 style="font-family:var(--font-serif);font-size:1.75rem;font-weight:700;color:var(--text);margin:40px 0 24px;">Our Signature</h2>
+                <p>Our signature offering—matching fabric earrings with every outfit—embodies our commitment to detail, ensuring that every ensemble tells a cohesive and captivating story. By integrating accessories seamlessly with attire, we provide our customers with a distinctive style statement that resonates with individuality and elegance.</p>
+
+                <h2 style="font-family:var(--font-serif);font-size:1.75rem;font-weight:700;color:var(--text);margin:40px 0 24px;">Mission and Vision</h2>
+                <p>At EKRAM ORIGINAL, our mission is to democratize fashion by offering good-quality, affordable clothing that doesn't compromise on uniqueness or style. We envision a world where every woman, regardless of her background, can express herself confidently through thoughtfully designed outfits that reflect both heritage and contemporary trends.</p>
+                <p>Our dedication to craftsmanship ensures that each piece is not only aesthetically pleasing but also durable and comfortable. By fostering a community that values authenticity and creativity, we aim to inspire women to embrace their individuality and carry forward the legacy of empowered femininity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h3>EKRAM ORIGINAL</h3><p>Heritage meets modern fashion. A legacy woven by three generations of women.</p></div>
+                <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="collections.html">Shop All</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+                <div><h4>Policies</h4><ul><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Exchange</a></li><li><a href="#">Terms & Conditions</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+                <div class="newsletter"><h4>Newsletter</h4><p style="margin-bottom:16px;">Subscribe for updates and exclusive deals.</p><input type="email" placeholder="Enter your email"><button>Subscribe</button></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 EKRAM ORIGINAL. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+</body>
+</html>

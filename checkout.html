@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | EKRAM ORIGINAL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <button class="menu-btn" onclick="openSidebar()"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+            <a href="index.html" class="logo"><img src="img/logo.png" alt="EKRAM ORIGINAL"><span class="logo-text">EKRAM ORIGINAL</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="collections.html">Collections <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+                    <div class="dropdown-menu">
+                        <a href="collections.html#kurti">Kurti & Tops</a>
+                        <a href="collections.html#coord">Co-Ord Sets</a>
+                        <a href="collections.html#boho">Boho Pants</a>
+                    </div>
+                </div>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="nav-icons">
+                <div style="display:flex;align-items:center;">
+                    <div id="searchWrapper" style="overflow:hidden;width:0;opacity:0;transition:all 0.3s;margin-right:8px;">
+                        <input id="searchInput" type="text" placeholder="Search products..." style="padding:8px 14px;border:1px solid #d1d5db;border-radius:999px;font-size:0.875rem;outline:none;width:240px;">
+                    </div>
+                    <button onclick="toggleSearch()">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </button>
+                </div>
+                <a href="account.html">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                </a>
+                <a href="cart.html" style="position:relative;">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeSidebar()"></div>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header"><span>MENU</span><button onclick="closeSidebar()"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+        <a href="index.html">Home</a><a href="collections.html">Collections</a><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="cart.html">Cart</a>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div style="padding:100px 24px 0; max-width:var(--max-width);margin:0 auto;">
+        <div style="display:flex;gap:8px;font-size:0.875rem;color:var(--text-muted);">
+            <a href="cart.html" style="color:var(--green);">Cart</a>
+            <span>›</span>
+            <span>Shipping</span>
+        </div>
+    </div>
+
+    <!-- Checkout -->
+    <section class="section" style="padding-top:24px;">
+        <div class="container">
+            <div class="checkout-grid">
+                <!-- Shipping Form -->
+                <div>
+                    <h2 style="font-family:var(--font-serif);font-size:1.75rem;font-weight:700;margin-bottom:24px;">Shipping Address</h2>
+                    <div class="contact-form">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                            <div class="form-group"><label>First Name</label><input type="text" placeholder="First name"></div>
+                            <div class="form-group"><label>Last Name</label><input type="text" placeholder="Last name"></div>
+                        </div>
+                        <div class="form-group"><label>Email</label><input type="email" placeholder="Email address"></div>
+                        <div class="form-group"><label>Phone</label><input type="tel" placeholder="Phone number"></div>
+                        <div class="form-group"><label>Address</label><input type="text" placeholder="Street address"></div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                            <div class="form-group"><label>City</label><input type="text" placeholder="City"></div>
+                            <div class="form-group"><label>State</label><input type="text" placeholder="State"></div>
+                        </div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                            <div class="form-group"><label>PIN Code</label><input type="text" placeholder="PIN code"></div>
+                            <div class="form-group"><label>Country</label><input type="text" value="India" readonly></div>
+                        </div>
+                        <button class="submit-btn" onclick="alert('Order placed successfully! Thank you for shopping with EKRAM ORIGINAL.')">Place Order</button>
+                    </div>
+                    <a href="cart.html" style="display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:var(--green);font-size:0.875rem;font-weight:500;">← Return to Cart</a>
+                </div>
+                <!-- Order Summary -->
+                <div>
+                    <div class="cart-summary" id="checkoutSummary">
+                        <h3 style="font-weight:600;margin-bottom:16px;">Your Order</h3>
+                        <div id="checkoutItems"></div>
+                        <div class="row"><span>Subtotal</span><span id="checkoutSubtotal">₹0</span></div>
+                        <div class="row"><span>Shipping</span><span style="color:var(--green);font-weight:600;">FREE</span></div>
+                        <div class="row total"><span>Total</span><span id="checkoutTotal">₹0</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div><h3>EKRAM ORIGINAL</h3><p>Heritage meets modern fashion. A legacy woven by three generations of women.</p></div>
+                <div><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="collections.html">Shop All</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+                <div><h4>Policies</h4><ul><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Exchange</a></li><li><a href="#">Terms & Conditions</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+                <div class="newsletter"><h4>Newsletter</h4><p style="margin-bottom:16px;">Subscribe for updates and exclusive deals.</p><input type="email" placeholder="Enter your email"><button>Subscribe</button></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2024 EKRAM ORIGINAL. All rights reserved.</p></div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script>
+        // Render checkout summary
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = JSON.parse(localStorage.getItem('cart')) || [];
+            const container = document.getElementById('checkoutItems');
+            let html = '';
+            let total = 0;
+            items.forEach(item => {
+                total += item.price * item.quantity;
+                html += `<div style="display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+                    <img src="${item.image}" alt="${item.name}" style="width:56px;height:70px;object-fit:cover;border-radius:8px;">
+                    <div style="flex:1;"><div style="font-weight:500;font-size:0.875rem;">${item.name}</div><div style="font-size:0.75rem;color:var(--text-muted);">Qty: ${item.quantity}</div></div>
+                    <div style="font-weight:600;font-size:0.875rem;">₹${(item.price * item.quantity).toLocaleString('en-IN')}</div>
+                </div>`;
+            });
+            container.innerHTML = html;
+            document.getElementById('checkoutSubtotal').textContent = '₹' + total.toLocaleString('en-IN');
+            document.getElementById('checkoutTotal').textContent = '₹' + total.toLocaleString('en-IN');
+        });
+    </script>
+</body>
+</html>
